@@ -165,8 +165,12 @@ function displaySchoolInfo(cityText) {
             var pOne = $("<p>").text("Population: " + pop);
             console.log(pop);
 
-            // Displaying the name
+            // Displaying the population
             censusDiv.append(pOne);
+        
+            // Displaying the division
+            var pTwo= $("<hr>")
+            censusDiv.append(pTwo)
 
             //Displaying result
             $("#pop-view").prepend(censusDiv);
@@ -268,6 +272,8 @@ function displayHousingInfo(cityText) {
         method: "GET",
     }).then(function (response) {
         console.log(response.results);
+        
+      for (var i = 0; i < 3; i++) {
 
         // Creating a div to hold the profile image
         var profDiv = $("<div class='prof'>");
@@ -299,6 +305,7 @@ function displayHousingInfo(cityText) {
 
         // Putting the entire apartment above the previous apartments
         $("#prof-view").prepend(profDiv);
+      }
 
     });
 

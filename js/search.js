@@ -1,4 +1,4 @@
-// Initial array of movies
+// Initial array of cities
 var cities = ["Phoenix", "Tucson", "St. George", "Salt Lake City", "Albuquerque", "Santa Fe", "Colorado Springs", "Denver"];
 var goodCitySearches =
 {
@@ -241,16 +241,54 @@ function displaySchoolInfo(cityText) {
     });
 };
 
-// var lat = response.results[0].geometry.location[0];
-// console.log(lat);
-// var long = response.results[0].geometry.location[1];
-var qURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBtGC_j3mLPUFTbLJau6USz42EHqnyvUi4&callback=initMap"
+    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=places+of+interest+in+" + city + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 
-$.ajaxPrefilter(function (options) {
-    if (options.crossDomain && $.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
-});
+
+    $.ajaxPrefilter(function (options) {
+        if (options.crossDomain && $.support.cors) {
+            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        }
+    });
+
+
+    // Creating an AJAX call for the specific profile card
+    $.ajax({
+        dataType: 'json',
+        //cache: false,
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        console.log(response.results);
+
+        // Creating a div to hold the image
+        var imgURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=" +
+        response.results[0].photos[0].photo_reference + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
+
+        // Creating an element to hold the image
+        var profImg = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        censusDiv.append(profImg);
+
+        // Storing the name data
+        var profName = response.results[0].name;
+
+        console.log(profName);
+
+        // Creating an element to have the name displayed
+        var pOne = $("<p>").text("Name: " + profName);
+
+        // Displaying the name
+        censusDiv.append(pOne);
+
+        // Appending the division
+        var pTwo= $("<hr>")
+        censusDiv.append(pTwo);
+
+        // Putting the entire apartment above the previous apartments
+        $("#pop-view").prepend(censusDiv);
+
+    });
 
 
 // displayHousingInfo function re-renders the HTML to display the appropriate content
@@ -273,7 +311,7 @@ function displayHousingInfo(cityText) {
     });
 
 
-    // Creating an AJAX call for the specific movie button being clicked
+    // Creating an AJAX call for apartments list
     $.ajax({
         dataType: 'json',
         //cache: false,

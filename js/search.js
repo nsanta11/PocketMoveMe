@@ -241,6 +241,15 @@ function displaySchoolInfo(cityText) {
     });
 };
 
+// displayHousingInfo function re-renders the HTML to display the appropriate content
+function displayHousingInfo(cityText) {
+    if (!$(this).attr("data-name")) {
+        var city = cityText;
+    }
+    else {
+        var city = $(this).attr("data-name");
+    }
+
     var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=places+of+interest+in+" + city + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 
 
@@ -290,15 +299,6 @@ function displaySchoolInfo(cityText) {
 
     });
 
-
-// displayHousingInfo function re-renders the HTML to display the appropriate content
-function displayHousingInfo(cityText) {
-    if (!$(this).attr("data-name")) {
-        var city = cityText;
-    }
-    else {
-        var city = $(this).attr("data-name");
-    }
 
     var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=apartments+for+rent+in+" + city + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 

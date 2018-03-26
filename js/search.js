@@ -68,13 +68,8 @@ $(document).ready(function () {
     // span.onclick = function() {
     //     modal.style.display = "none";
     // };
-    
+
     // When the user clicks anywhere outside of the modal, close it
-    // window.onclick = function(event) {
-    //     if (event.target == modal) {
-    //         modal.style.display = "none";
-    //     }
-    // }
 
 //function to display school district API
 //Assigning variable data to each city in order to call APIs 
@@ -334,7 +329,7 @@ function displayHousingInfo(cityText) {
 
             // Appending the division
             var pFour= $("<hr>")
-            schoolDiv.append(pFour);
+            housingDiv.append(pFour);
 
             // Putting the entire apartment above the previous apartments
             $("#cities-view").prepend(housingDiv);

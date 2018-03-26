@@ -116,6 +116,7 @@ nav ul a, nav .brand-logo {
 .card {
  margin-top: 70px;
  margin-bottom: 100px;
+ padding: 0;
 }
 
 #api1 {

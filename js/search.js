@@ -118,6 +118,7 @@ function displaySchoolInfo(cityText) {
     }
 
     else if (city === "Santa Fe") {
+        var city = "santafe";
         var st = "NM";
         var place = "70500";
         var county = "049";

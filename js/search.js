@@ -280,7 +280,7 @@ function displayHousingInfo(cityText) {
     }).then(function (response) {
         console.log(response.results);
         
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < 5; i++) {
 
         // Creating a div to hold the profile image
         var profDiv = $("<div class='prof'>");

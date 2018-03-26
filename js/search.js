@@ -298,7 +298,7 @@ function displayHousingInfo(cityText) {
         profDiv.append(pTwo);
 
         // Putting the entire apartment above the previous apartments
-        $("#pop-view").prepend(profDiv);
+        $("#prof-view").prepend(profDiv);
 
     });
 
@@ -359,7 +359,7 @@ function displayHousingInfo(cityText) {
             housingDiv.append(pThree);
 
             // Retrieving the URL for the image
-            var imgURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" +
+            var imgURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=" +
                 response.results[i].photos[0].photo_reference + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 
             // Creating an element to hold the image

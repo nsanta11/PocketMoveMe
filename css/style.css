@@ -114,16 +114,16 @@ nav ul a, nav .brand-logo {
 }
 
 .card {
- margin-top: 50px;
+ margin-top: 70px;
  margin-bottom: 100px;
 }
 
 #api1 {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 #api3 {
-  margin-right: 50px;
+  margin-right: 30px;
 }
 
 #cityProf, #schoolDist, #apartments {

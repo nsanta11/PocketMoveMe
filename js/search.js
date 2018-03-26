@@ -319,10 +319,16 @@ $("#add-city").on("click", function (event) {
 
 });
 
+//Added Page Reload On Home and Logo Click//
+$(".home").on('click', function() {
+    location.reload();
+});
+
 });
 
 // Adding a click event listener to all elements with a class of "city-btn"
 $(document).on("click", ".city-btn", displayHousingInfo, displaySchoolInfo);
+
 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();

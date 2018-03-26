@@ -269,6 +269,9 @@ function displayHousingInfo(cityText) {
     }).then(function (response) {
         console.log(response.results);
 
+        // Creating a div to hold the profile image
+        var profDiv = $("<div class='prof'>");
+
         // Creating a div to hold the image
         var imgURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=" +
         response.results[0].photos[0].photo_reference + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
@@ -277,7 +280,7 @@ function displayHousingInfo(cityText) {
         var profImg = $("<img>").attr("src", imgURL);
 
         // Appending the image
-        censusDiv.append(profImg);
+        profDiv.append(profImg);
 
         // Storing the name data
         var profName = response.results[0].name;
@@ -288,14 +291,14 @@ function displayHousingInfo(cityText) {
         var pOne = $("<p>").text("Name: " + profName);
 
         // Displaying the name
-        censusDiv.append(pOne);
+        profDiv.append(pOne);
 
         // Appending the division
         var pTwo= $("<hr>")
-        censusDiv.append(pTwo);
+        profDiv.append(pTwo);
 
         // Putting the entire apartment above the previous apartments
-        $("#pop-view").prepend(censusDiv);
+        $("#pop-view").prepend(profDiv);
 
     });
 

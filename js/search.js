@@ -280,7 +280,7 @@ function displayHousingInfo(cityText) {
 
         // Creating a div to hold the image
         var imgURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=" +
-        response.results[0].photos[0].photo_reference + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
+        response.results[i].photos[0].photo_reference + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 
         // Creating an element to hold the image
         var profImg = $("<img>").attr("src", imgURL);
@@ -289,7 +289,7 @@ function displayHousingInfo(cityText) {
         profDiv.append(profImg);
 
         // Storing the name data
-        var profName = response.results[0].name;
+        var profName = response.results[i].name;
 
         console.log(profName);
 

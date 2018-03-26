@@ -261,7 +261,7 @@ function displayHousingInfo(cityText) {
         var city = $(this).attr("data-name");
     }
 
-    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=places+of+interest+in+" + city + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=points+of+interest+in+" + city + "&key=AIzaSyB88OyuQr7ZsKoh3RKFpJp7S89kA6JFkxU&libraries=places";
 
 
     $.ajaxPrefilter(function (options) {

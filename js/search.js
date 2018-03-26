@@ -311,7 +311,7 @@ function displayHousingInfo(cityText) {
         profDiv.append(pTwo);
 
         // Putting the entire apartment above the previous apartments
-        $("#prof-view").prepend(profDiv);
+        $("#prof-view").append(profDiv);
       }
 
     });

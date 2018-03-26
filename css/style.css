@@ -143,11 +143,6 @@ nav ul a, nav .brand-logo {
   margin: 0 !important;
 }
 
-.card {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */

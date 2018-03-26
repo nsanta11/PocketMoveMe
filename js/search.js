@@ -288,7 +288,7 @@ function displayHousingInfo(cityText) {
         console.log(profName);
 
         // Creating an element to have the name displayed
-        var pOne = $("<p>").text("Name: " + profName);
+        var pOne = $("<p>").text(profName);
 
         // Displaying the name
         profDiv.append(pOne);

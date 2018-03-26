@@ -181,7 +181,14 @@ function displaySchoolInfo(cityText) {
         city = "Saint George";
     }
     var queryURL = "https://api.schooldigger.com/v1.1/districts?st=" + st + "&city=" + city + "&appID=5aff21be&appKey=771c87d4084c3aa107c831689cb4a332"
-
+    
+    //CORS solution to allow prper access
+    $.ajaxPrefilter(function (options) {
+        if (options.crossDomain && $.support.cors) {
+            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        }
+    });
+    
     $.ajax({
         dataType: 'json',
         //cache: false,

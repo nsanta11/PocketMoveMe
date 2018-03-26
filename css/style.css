@@ -126,6 +126,10 @@ nav ul a, nav .brand-logo {
   margin-right: 50px;
 }
 
+#cityProf, #schoolDist, #apartments {
+  font-stule: bold;
+}
+
 #update {
   font-style: italic;
   text-align: center;
